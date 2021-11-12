@@ -54,10 +54,12 @@
                                             $checked = $_GET['marques'];
                                         }
                                         ?>
-                                            <div>
-                                                <input type="checkbox" name="marques[]" value="<?= $marquelist['idMarque']; ?>" 
-                                                    <?php if(in_array($marquelist['idMarque'], $checked)){ echo "checked"; } ?>
-                                                 />
+                                            <div class ="lblContainerCheckbox">
+                                                <label>
+                                                    <input type="checkbox" name="marques[]" value="<?= $marquelist['idMarque']; ?>" 
+                                                        <?php if(in_array($marquelist['idMarque'], $checked)){ echo "checked"; } ?>>
+                                                        <span class="checkmarkCheckbox"></span>
+                                                </label>
                                                 <?= $marquelist['marNom']; ?>
                                             </div>
                                         <?php
@@ -114,7 +116,7 @@
                                 <option value="telTailleEcran">Taille d'écran</option>
                                 <option value="telRam">RAM</option>
                                 <option value="telMemoire">Mémoire interne</option>
-                            </select><br>
+                            </select><br><br>
                             <label class ="lblContainer" for="asc">Ascendant
                                 <input type="radio" id="asc" name="orderChoice" value="ASC" checked="checked">
                                 <span class="checkmark"></span>
@@ -128,11 +130,47 @@
                         <div class="card-body">
                             <h6>Requetes secondaire</h6>
                             <hr>
-                            <input type="radio" id="autonomieTel" name="reqSec" value="autonomieTel"><label style="margin-left: 3px;" for="autonomieTel">Top 5 Autonomies</label><br>
-                            <input type="radio" id="cpuPower" name="reqSec" value="cpuPower"><label style="margin-left: 3px;" for="cpuPower">Top 10 CPU</label><br>
-                            <input type="radio" id="cpuScreenSizeRAM" name="reqSec" value="cpuScreenSizeRAM"><label style="margin-left: 3px;" for="cpuScreenSizeRAM">Top 5 CPU, Ecran, RAM</label><br>
-                            <input type="radio" id="prixTel" name="reqSec" value="prixTel"><label style="margin-left: 3px;" for="prixTel">Top 3 Plus cher</label><br>
-                            <input type="radio" id="prixTelMarqueOS" name="reqSec" value="prixTelMarqueOS"><label style="margin-left: 3px;" for="prixTelMarqueOS">Tel - cher (marque + OS)</label><br>
+                            <label class ="lblContainer" for="autonomieTel">Top 5 Autonomies
+                                <input type="radio" id="autonomieTel" name="reqSec" value="autonomieTel">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="cpuPower">Top 10 CPU
+                                <input type="radio" id="cpuPower" name="reqSec" value="cpuPower">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="cpuScreenSizeRAM">Top 5 CPU, Ecran, RAM
+                                <input type="radio" id="cpuScreenSizeRAM" name="reqSec" value="cpuScreenSizeRAM">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="prixTel">Top 3 Plus cher
+                                <input type="radio" id="prixTel" name="reqSec" value="prixTel">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="prixTelMarqueOS">Tel - cher (marque + OS)
+                                <input type="radio" id="prixTelMarqueOS" name="reqSec" value="prixTelMarqueOS">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="evolPrice">Evolution des prix
+                                <input type="radio" id="evolPrice" name="reqSec" value="evolPrice">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+
+                        <div class="card-body">
+                            <h6>Requetes clients</h6>
+                            <hr>
+                            <label class ="lblContainer" for="achatClient">Achat du client
+                                <input type="radio" id="achatClient" name="reqClient" value="achatClient">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="nbVenteTel">Nb Ventes par téléphone
+                                <input type="radio" id="nbVenteTel" name="reqClient" value="nbVenteTel">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class ="lblContainer" for="venteTel">Vente de téléphones
+                                <input type="radio" id="venteTel" name="reqClient" value="venteTel">
+                                <span class="checkmark"></span>
+                            </label>
                         </div>
                     </div>
                 </form>
@@ -276,7 +314,78 @@
                                 {
                                     $products = "SELECT * FROM t_telephone INNER JOIN t_marque ON t_telephone.fkMarque = t_marque.idMarque GROUP BY marNom ORDER BY telPrixActuel DESC";
                                 }
-                                ShowAllInfo($products, $bdd);
+                                else if($listSelected == 'evolPrice')
+                                {
+                                    $products = "SELECT marNom, telModele, telPrixActuel-telPrixSortie AS 'EvolPrix' FROM t_telephone INNER JOIN t_marque ON t_marque.idMarque=t_telephone.fkMarque ORDER BY telModele";
+                                    ShowEvolPrice($products, $bdd);
+                                }
+                                if($listSelected !== 'evolPrice')
+                                {
+                                    ShowAllInfo($products, $bdd);
+                                }                                       
+                            }
+                            // Requetes clients
+                            else if(isset($_GET['reqClient']))
+                            {
+                                $listSelected = $_GET['reqClient'];
+
+                                if($listSelected == 'achatClient')
+                                {
+                                    $products = "SELECT cliNom, cliPrenom, marNom, telModele
+                                                FROM t_telephone
+                                                INNER JOIN t_marque
+                                                ON t_marque.idMarque = t_telephone.fkMarque
+                                                INNER JOIN t_contenir
+                                                ON t_telephone.idTelephone = t_contenir.fkTelephone
+                                                INNER JOIN t_commande
+                                                ON t_commande.idCommande = t_contenir.fkCommande
+                                                INNER JOIN t_client
+                                                ON t_client.idClient = t_commande.fkClient
+                                                ORDER BY cliNom";
+                                    ShowAllInfoReqClient($products, $bdd);
+                                }
+                                else if($listSelected == 'nbVenteTel')
+                                {
+                                    $products = "SELECT marNom, telModele, COUNT(fkTelephone)
+                                                FROM t_telephone
+                                                INNER JOIN t_marque
+                                                ON t_marque.idMarque = t_telephone.fkMarque
+                                                INNER JOIN t_contenir
+                                                ON t_telephone.idTelephone = t_contenir.fkTelephone
+                                                GROUP BY telModele";
+                                    ShowAllInfoReqNbSoldTel($products, $bdd);
+                                }
+                                else if($listSelected == 'venteTel')
+                                {
+                                    $products = "SELECT marNom, telModele, cliNom, cliPrenom
+                                                FROM t_telephone
+                                                INNER JOIN t_marque
+                                                ON t_marque.idMarque = t_telephone.fkMarque
+                                                INNER JOIN t_contenir
+                                                ON t_telephone.idTelephone = t_contenir.fkTelephone
+                                                INNER JOIN t_commande
+                                                ON t_commande.idCommande = t_contenir.fkCommande
+                                                INNER JOIN t_client
+                                                ON t_client.idClient = t_commande.fkClient
+                                                ORDER BY telModele";
+
+                                    $products_run = mysqli_query($bdd, $products);
+                                    if(mysqli_num_rows($products_run) > 0)
+                                    {
+                                        foreach($products_run as $proditems) :
+                                            ?>
+                                                <div class="col-md-4 mt-3">
+                                                    <div class="border p-2">
+                                                        <h5><?=$proditems['marNom']?></h5>
+                                                        <h5><?=$proditems['telModele']?></h5>
+                                                        <h6><?=$proditems['cliNom'].' '.$proditems['cliPrenom']?></h6>  
+                                                    </div>
+                                                </div>
+                                            <?php
+                                        endforeach;
+                                    }
+                                }
+                                
                             }
                             // Requete affichage de tous les téléphones
                             else
@@ -290,6 +399,72 @@
             </div>
         </div>
         <?php
+        function ShowEvolPrice($products, $bdd)
+        {
+            $products_run = mysqli_query($bdd, $products);
+            if(mysqli_num_rows($products_run) > 0)
+            {
+                foreach($products_run as $proditems) :
+                    ?>
+                        <div class="col-md-4 mt-3">
+                            <div class="border p-2">
+                                <h5><?=$proditems['marNom']?></h5>
+                                <h5><?=$proditems['telModele']?></h5>
+                                <?php
+                                if($proditems['EvolPrix']<=0)
+                                {?>
+                                    <h6>Evol. du prix: <b style="color:green"><?=$proditems['EvolPrix']?> $</b></h6>  
+                                <?php
+                                }
+                                else
+                                {?>
+                                    <h6>Evol. du prix: <b style="color:red">+<?=$proditems['EvolPrix']?> $</b></h6>  
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    <?php
+                endforeach;
+            }
+        }
+        function ShowAllInfoReqNbSoldTel($products, $bdd)
+        {
+            $products_run = mysqli_query($bdd, $products);
+            if(mysqli_num_rows($products_run) > 0)
+            {
+                foreach($products_run as $proditems) :
+                    ?>
+                        <div class="col-md-4 mt-3">
+                            <div class="border p-2">
+                                <h5><?=$proditems['marNom']?></h5>
+                                <h6><?=$proditems['telModele']?></h6>
+                                <h6 style="color:green">Nb de ventes: <?=$proditems['COUNT(fkTelephone)']?></h6>
+                            </div>
+                        </div>
+                    <?php
+                endforeach;
+            }
+        }
+        function ShowAllInfoReqClient($products, $bdd)
+        {
+            $products_run = mysqli_query($bdd, $products);
+            if(mysqli_num_rows($products_run) > 0)
+            {
+                foreach($products_run as $proditems) :
+                    ?>
+                        <div class="col-md-4 mt-3">
+                            <div class="border p-2">
+                                <h5><?=$proditems['cliNom'].' '.$proditems['cliPrenom']?></h5>
+                                <h6><?=$proditems['marNom']?></h6>
+                                <h6><?=$proditems['telModele']?></h6>
+                            </div>
+                        </div>
+                    <?php
+                endforeach;
+            }
+        }
+
         function ShowAllInfo($products, $bdd)
         {
             $products_run = mysqli_query($bdd, $products);
@@ -315,8 +490,7 @@
                     <?php
                 endforeach;
             }
-        }
-        ?>
+        }?>
     </div>
 </body>
 </html>

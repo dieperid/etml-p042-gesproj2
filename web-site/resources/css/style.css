@@ -151,6 +151,7 @@ td {
 }
 /* BUTTON RADIO*/
 .lblContainer {
+  margin-bottom: 5px;
   display: block;
   position: relative;
   padding-left: 25px;
@@ -168,16 +169,17 @@ td {
   width: 0;
 }
 .checkmark {
+  border: solid 1px rgb(207, 207, 207);
   position: absolute;
   top: 4px;
   left: 2px;
-  height: 15px;
-  width: 15px;
+  height: 17px;
+  width: 17px;
   background-color: #eee;
   border-radius: 50%;
 }
 .lblContainer:hover input ~ .checkmark {
-  background-color: #2196f3;
+  background-color: #ccc;
 }
 .checkmark:after {
   content: '';
@@ -204,7 +206,7 @@ td {
   display: block;
   position: relative;
   padding-left: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -223,12 +225,14 @@ td {
 
 /* Create a custom checkbox */
 .checkmarkCheckbox {
+  margin-top: 3px;
   position: absolute;
   top: 0;
   left: 0;
-  height: 17px;
-  width: 17px;
+  height: 18px;
+  width: 18px;
   background-color: #eee;
+  border: solid 1px rgb(207, 207, 207);
 }
 
 /* On mouse-over, add a grey background color */
