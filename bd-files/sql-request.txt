@@ -1,0 +1,63 @@
+1) SELECT * FROM t_telephone WHERE telOS = '' ;
+
+2) SELECT * FROM t_telephone ORDER BY telTailleEcran DESC ;
+
+3) SELECT telMarque, telModele, telPrixSortie, telPrixActuel FROM t_telephone ;
+
+4) SELECT * FROM t_telephone WHERE fkMarque ;
+
+5)SELECT * FROM t_telephone ORDER BY telAutonomie DESC LIMIT 5 ;
+
+6) SELECT * FROM t_telephone ORDER BY ROUND(telChipsetGhz, telNbCoeur) DESC LIMIT 10 ;
+
+7) SELECT * FROM t_telephone ORDER BY ROUND(telChipsetGhz, telNbCoeur) DESC, telTailleEcran DESC, telRAM DESC LIMIT 5 ;
+
+8) SELECT * FROM t_telephone ORDER BY telPrixActuel DESC LIMIT 3 ;
+
+9) SELECT * FROM t_telephone ORDER BY telPrixActuel ASC WHERE telOS = '' AND fkMarque = '' ;
+
+
+10) 
+SELECT cliNom, marNom, telModele
+FROM t_telephone
+INNER JOIN t_marque
+ON t_marque.idMarque = t_telephone.fkMarque
+INNER JOIN t_contenir
+ON t_telephone.idTelephone = t_contenir.fkTelephone
+INNER JOIN t_commande
+ON t_commande.idCommande = t_contenir.fkCommande
+INNER JOIN t_client
+ON t_client.idClient = t_commande.fkClient
+ORDER BY cliNom
+
+11)
+SELECT marNom, telModele, COUNT(fkTelephone)
+FROM t_telephone
+INNER JOIN t_marque
+ON t_marque.idMarque = t_telephone.fkMarque
+INNER JOIN t_contenir
+ON t_telephone.idTelephone = t_contenir.fkTelephone
+GROUP BY telModele
+
+12)
+SELECT marNom, telModele, cliNom
+FROM t_telephone
+INNER JOIN t_marque
+ON t_marque.idMarque = t_telephone.fkMarque
+INNER JOIN t_contenir
+ON t_telephone.idTelephone = t_contenir.fkTelephone
+INNER JOIN t_commande
+ON t_commande.idCommande = t_contenir.fkCommande
+INNER JOIN t_client
+ON t_client.idClient = t_commande.fkClient
+ORDER BY telModele
+
+13) Vue SQL
+CREATE VIEW v_comPrixTotal AS 
+SELECT idCommande, comDateAchat, telPrixActuel, conQuantite, telPrixActuel*t_contenir.conQuantite AS comPrix
+FROM t_telephone
+INNER JOIN t_contenir
+ON t_contenir.fkTelephone = t_telephone.idTelephone
+INNER JOIN t_commande
+ON t_commande.idCommande = t_contenir.fkCommande
+ORDER BY idCommande

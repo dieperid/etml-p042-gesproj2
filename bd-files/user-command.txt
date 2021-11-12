@@ -1,0 +1,5 @@
+CREATE USER 'admingesproj2'@'localhost' IDENTIFIED BY 'root'; 		CREATION ADMIN
+GRANT ALL ON db_gesproj2.* TO 'admingesproj2'@'localhost';	 	AUTORISATIONS
+
+
+
