@@ -8,7 +8,7 @@ Use the script (db_gesProj2.sql) in [bd-files\sql-scripts] on MySQL .
 
 1. Open UwAmp and right click on PHPMyAdmin  :
 
-![alt text](https://github.com/dieperid/etml-p042-gesproj2/tree/devlopment/documentation/images/UwAmp.png?raw=true)
+![alt text](https://raw.github.com/dieperid/etml-p042-gesproj2/tree/devlopment/documentation/images/UwAmp.png?raw=true)
 
 2. Sign In with root and execute :
 
