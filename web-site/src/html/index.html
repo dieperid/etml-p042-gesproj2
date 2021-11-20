@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../resources/css/style.css" />
-    <script src="../../resources/js/darkmode.js"></script>
+    <script src="../../resources/js/darkmode.js" defer></script>
     <title>Accueil</title>
   </head>
   <body>
@@ -18,21 +18,19 @@
       </nav>
     </header>
 
-    
-
     <div class="sun"></div>
     <div id="Clouds">
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Background"></div>
-      </div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Foreground"></div>
+      <div class="Cloud Background"></div>
+      <div class="Cloud Background"></div>
+    </div>
 
     <div class="moonShadow"></div>
     <div class="moon"></div>
@@ -92,7 +90,7 @@
       </div>
       <div class="case caseDarkmode">
         <label class="switch">
-          <input type="checkbox" name="modeDark" class="boxDarkMode" onclick="clicked()">
+          <input id="chBoxDarkMode" type="checkbox" />
           <span class="slider round"></span>
         </label>
       </div>
