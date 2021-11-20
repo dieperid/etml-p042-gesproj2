@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../resources/css/style.css" />
+    <script src="../../resources/js/darkmode.js" defer></script>
     <title>Accueil</title>
   </head>
 <body>
@@ -17,6 +18,30 @@
         </ul>
       </nav>
     </header>
+
+    <div class="sun"></div>
+    <div id="Clouds">
+        <div class="Cloud Foreground"></div>
+        <div class="Cloud Background"></div>
+        <div class="Cloud Foreground"></div>
+        <div class="Cloud Background"></div>
+        <div class="Cloud Foreground"></div>
+        <div class="Cloud Background"></div>
+        <div class="Cloud Background"></div>
+        <div class="Cloud Foreground"></div>
+        <div class="Cloud Background"></div>
+        <div class="Cloud Background"></div>
+      </div>
+
+    <div class="moonShadow"></div>
+    <div class="moon"></div>
+    <div id="star1" class="star"></div>
+    <div id="star2" class="star"></div>
+    <div id="star3" class="star"></div>
+    <div id="star4" class="star"></div>
+    <div id="star5" class="star"></div>
+    <div id="star6" class="star"></div>
+
     <div class="container-telephone">
         <div class="row rowParent">
             <div class="col-md-12">

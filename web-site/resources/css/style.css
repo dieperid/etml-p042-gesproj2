@@ -1,3 +1,73 @@
+
+:root {
+  --mainBackground1-color: #fff2df;
+	--mainBackground2-color: #b8b8b8;
+	--mainBackground3-color: #646464;
+
+  --navFont-color: #0d1117;
+  --navBackground-color: #EDE9E9;
+  --navActiveBackground: #FFFFFF;
+
+  --boxBackground-color:#ffffff;
+
+  --text-color: #000000;
+  --svgBackground-color: #000000;
+
+  --caseActive-color: #EC490D;
+
+  --checkmarkBorder-color: #CFCFCF;
+  --checkmarkBackground-color: #EEEEEE;
+  --checkmarkChecked-color: #2196f3;
+  --checkmarkHover-color: #CCCCCC;
+  --checkmarkCheckedAfter-color: #ffffff;
+
+  --sun-color: #FFDE00;
+	--sunshine1-color: #FFDE0080;
+	--sunshine2-color: #FFDE0040;
+	--sunshine3-color: #FFDE0020;
+	--sunshine4-color: #FFDE0010;
+	--sunshine5-color: #FFDE0000;
+
+  --moon-color: none;
+	--star-color: none;
+	--starShadow-color: none;
+}
+
+.dark-mode {
+	--mainBackground1-color: #727272;
+	--mainBackground2-color: #1f1f1f;
+	--mainBackground3-color: #000000;
+
+  --navFont-color: #FEFEFF;
+  --navBackground-color: #090C10;
+  --navActiveBackground: #21262D;
+
+  --boxBackground-color: #090C10;
+
+  --text-color: #F0F2F8;
+  --svgBackground-color: #FFFFFF;
+
+  --caseActive-color: #EC490D;
+
+  --checkmarkBorder-color: #CFCFCF;
+  --checkmarkBackground-color: #EEEEEE;
+  --checkmarkChecked-color: #2196f3;
+  --checkmarkHover-color: #CCCCCC;
+  --checkmarkCheckedAfter-color: #ffffff;
+
+	--sun-color: none;
+	--sunshine1-color: none;
+	--sunshine2-color: none;
+	--sunshine3-color: none;
+	--sunshine4-color: none;
+	--sunshine5-color: none;
+	--sunshine6-color: none;
+
+	--moon-color: #FFDE00;
+	--star-color: #ffffff;
+	--starShadow-color: #ffffff;
+}
+
 * {
   margin: 0;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
@@ -5,8 +75,8 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 body {
-  background-color: rgb(248, 248, 248);
-  background-image: url(../img/background.jpg);
+  background-color: var(--mainBackground1-color);
+  background-image: radial-gradient(circle, var(--mainBackground1-color) 0%, var(--mainBackground2-color) 70%, var(--mainBackground3-color) 100%);
   background-size: cover;
   background-attachment: fixed;
   line-height: normal;
@@ -15,11 +85,11 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: white;
 }
 nav {
   margin-top: 30px;
   top: 0;
+  z-index: 3;
 }
 ul {
   padding: 2px;
@@ -29,7 +99,7 @@ ul {
 ul,
 li {
   border-radius: 20px;
-  background-color: rgb(99, 99, 99);
+  background-color: var(--navBackground-color);
 }
 ul li,
 a {
@@ -40,19 +110,17 @@ a {
   text-decoration: none;
   color: var(--navFont-color);
 }
-a:hover {
-  color: white;
-}
 #active {
   padding: 11px;
   border-radius: 15px;
-  background-color: rgba(181, 179, 179, 0.5);
+  background-color: var(--navActiveBackground);
 }
 .container {
   margin: 100px auto 0 auto;
   width: 45%;
   display: flex;
   flex-wrap: wrap;
+  z-index: 2;
 }
 .container-telephone {
   margin: 30px auto 0 auto;
@@ -62,13 +130,15 @@ a:hover {
 }
 
 .case {
-  background-color: rgba(181, 179, 179, 0.5);
-  color: black;
+  background-color: var(--boxBackground-color);
+  color: var(--text-color);
   height: 265px;
   width: 265px;
   margin: 10px;
   border-radius: 20px;
+  z-index: 2;
 }
+
 .caseInfo,
 .caseGitLab {
   width: 550px;
@@ -92,6 +162,9 @@ img {
   text-align: center;
   padding-top: 30px;
 }
+.case h3.title{
+  padding-top: 0px;
+}
 .case h4 {
   text-align: center;
 }
@@ -104,6 +177,7 @@ svg {
   margin: 7px;
   padding: 7px;
   justify-content: center;
+  fill: var(--svgBackground-color);
 }
 .case #svgLogos {
   margin-left: auto;
@@ -113,30 +187,12 @@ svg {
   align-items: center;
 }
 .case a:hover {
-  color: rgb(236, 73, 13);
+  color: var(--caseActive-color);
 }
 
 #tableau {
   table-layout: fixed;
   width: 100%;
-}
-
-th {
-  padding: 1%;
-  font-size: 20px;
-  background-color: #557cba;
-}
-
-tr:nth-child(odd) {
-  background-color: #ced4e5;
-}
-
-tr:nth-child(even) {
-  background-color: #e8ebf5;
-}
-
-td {
-  padding: 1%;
 }
 
 .col-md-3 {
@@ -169,17 +225,17 @@ td {
   width: 0;
 }
 .checkmark {
-  border: solid 1px rgb(207, 207, 207);
+  border: solid 1px var(--checkmarkBorder-color);
   position: absolute;
   top: 4px;
   left: 2px;
   height: 17px;
   width: 17px;
-  background-color: #eee;
+  background-color: var(--checkmarkBackground-color);
   border-radius: 50%;
 }
 .lblContainer:hover input ~ .checkmark {
-  background-color: #ccc;
+  background-color: var(--checkmarkHover-color);
 }
 .checkmark:after {
   content: '';
@@ -190,7 +246,7 @@ td {
   display: block;
 }
 .lblContainer input:checked ~ .checkmark {
-  background-color: #2196f3;
+  background-color: var(--checkmarkChecked-color);
 }
 .lblContainer .checkmark:after {
   top: 4px;
@@ -198,7 +254,7 @@ td {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: white;
+  background: var(--checkmarkCheckedAfter-color);
 }
 
 /* CHECKBOX */
@@ -231,18 +287,18 @@ td {
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: #eee;
-  border: solid 1px rgb(207, 207, 207);
+  background-color: var(--checkmarkBackground-color);
+  border: solid 1px var(--checkmarkBorder-color);
 }
 
 /* On mouse-over, add a grey background color */
 .lblContainerCheckbox:hover input ~ .checkmarkCheckbox {
-  background-color: #ccc;
+  background-color: var(--checkmarkHover-color);
 }
 
 /* When the checkbox is checked, add a blue background */
 .lblContainerCheckbox input:checked ~ .checkmarkCheckbox {
-  background-color: #2196f3;
+  background-color: var(--checkmarkChecked-color);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -263,12 +319,230 @@ td {
   top: 2px;
   width: 5px;
   height: 12px;
-  border: solid white;
+  border: solid var(--checkmarkCheckedAfter-color);
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.caseDarkmode {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moonShadow{
+	position: absolute;
+	margin: auto;
+	top: 250px;
+	right: 200px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	filter: blur(15px);
+	box-shadow: 25px 10px 0px 0px var(--moon-color); 
+	animation: moonSpin 60s linear infinite;
+}
+
+.moon{
+	position: absolute;
+	margin: auto;
+	top: 250px;
+	right: 200px;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	box-shadow: 25px 10px 0px 0px var(--moon-color); 
+	animation: moonSpin 60s linear infinite;
+}
+
+
+.star{
+	position: absolute;
+	margin: auto;
+	width: 3px;
+	height: 3px;
+	border-radius: 50%;
+	box-shadow: 25px 10px 0px 0px var(--star-color); 
+	animation: starSpin 160s linear infinite;
+}
+
+#star1{
+	top: 240px;
+	right: 440px;
+}
+#star2{
+	top: 270px;
+	right: 170px;
+}
+#star3{
+	top: 210px;
+	right: 100px;
+}
+#star4{
+	top: 100px;
+	right: 270px;
+}
+#star5{
+	top: 10px;
+	right: 170px;
+}
+#star6{
+	top: 210px;
+	right: 270px;
+}
+
+@keyframes moonSpin {
+	from {
+	  transform: rotate(30deg) translate(180px);
+	}
+	to {
+	  transform: rotate(0deg) translate(-1800px);
+	}
+}
+
+@keyframes starSpin {
+	from {
+	  transform: rotate(30deg) translate(110px);
+	}
+	to {
+	  transform: rotate(0deg) translate(-1800px);
+	}
+  }
+
+
+
+.sun {
+	position: absolute;
+	margin: auto;
+	top: 267px;
+	right: 177px;
+	width: 110px;
+	height: 110px;
+	background-color: var(--sun-color);
+	border-radius: 50%;
+	box-shadow:
+		0 0 0 20px var(--sunshine1-color),
+		0 0 0 40px var(--sunshine2-color),
+		0 0 0 60px var(--sunshine3-color),
+		0 0 0 80px var(--sunshine4-color),
+		0 0 0 100px var(--sunshine5-color),
+		0 0 40px 100px var(--sunshine4-color);
+	animation:
+		sunriseDeplacement 60s linear infinite,
+		sunrise 2s infinite linear forwards,
+		rays 2s 2s infinite linear;
+}
+
+@keyframes sunriseDeplacement {
+	from {
+		transform: rotate(30deg) translate(180px);
+	}
+	to {
+		transform: rotate(0deg) translate(-1800px);
+	}
+}
+
+@keyframes sunrise {
+	0% {
+		box-shadow: none;
+	}
+}
+
+@keyframes rays {
+	0% {
+		box-shadow: 
+		0 0 0 0 var(--sunshine1-color),
+		0 0 0 20px var(--sunshine1-color),
+		0 0 0 40px var(--sunshine2-color),
+		0 0 0 60px var(--sunshine3-color),
+		0 0 0 80px var(--sunshine4-color),
+		0 0 40px 100px var(--sunshine4-color);
+	}
+	100% {
+		box-shadow: 
+		0 0 0 20px var(--sunshine1-color),
+		0 0 0 40px var(--sunshine2-color),
+		0 0 0 60px var(--sunshine3-color),
+		0 0 0 80px var(--sunshine4-color),
+		0 0 0 100px var(--sunshine5-color),
+		0 0 40px 100px var(--sunshine4-color);
+	}
+}
+
+.cloud {
+    background: rgb(222, 237, 248);
+    border-radius: 200px;
+    box-shadow:0 1px 1px rgba(0,0,0,0.1);
+    height: 39px;
+    margin-right: 0;
+    position: absolute;
+    right: 0%;
+    width: 102px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 44px;
+}
+
+.switch input.boxDarkMode { 
+opacity: 0;
+width: 0;
+height: 0;
+}
+
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e6e6e6;
+-webkit-transition: .4s;
+transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 36px;
+  width: 36px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffffff;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input.boxDarkMode:checked + .slider {
+box-shadow: var(--boxShadow-color) 0px 0px 0px 2px inset;
+  background-color: #21262D;
+}
+
+input.boxDarkMode:focus + .slider {
+box-shadow: 0 0 1px #2196F3;
+}
+
+input.boxDarkMode:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(35px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+
 
 @media only screen and (max-width: 600px) {
   #git {
