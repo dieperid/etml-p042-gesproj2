@@ -7,7 +7,9 @@
   --navBackground-color: #ede9e9;
   --navActiveBackground: #ffffff;
 
+  --boxHeader-color: rgba(0, 0, 0, 0.03);
   --boxBackground-color: #ffffff;
+  --boxBackground2-color: #ffffff;
 
   --text-color: #000000;
   --svgBackground-color: #000000;
@@ -41,17 +43,19 @@
   --navBackground-color: #090c10;
   --navActiveBackground: #21262d;
 
+  --boxHeader-color: #000000;
   --boxBackground-color: #090c10;
+  --boxBackground2-color: #111111;
 
   --text-color: #f0f2f8;
   --svgBackground-color: #ffffff;
 
   --caseActive-color: #ec490d;
 
-  --checkmarkBorder-color: #cfcfcf;
-  --checkmarkBackground-color: #eeeeee;
+  --checkmarkBorder-color: #868686;
+  --checkmarkBackground-color: #474747;
   --checkmarkChecked-color: #2196f3;
-  --checkmarkHover-color: #cccccc;
+  --checkmarkHover-color: #5a5a5a;
   --checkmarkCheckedAfter-color: #ffffff;
 
   --sun-color: none;
@@ -74,6 +78,7 @@
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 body {
+  color: var(--text-color);
   background-color: var(--mainBackground1-color);
   background-image: radial-gradient(
     circle,
@@ -119,6 +124,18 @@ a {
   border-radius: 15px;
   background-color: var(--navActiveBackground);
 }
+li a:hover {
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--boxBackground2-color);
+}
+
+.card-header {
+  background-color: var(--boxHeader-color);
+}
+
 .container {
   margin: 100px auto 0 auto;
   width: 45%;
