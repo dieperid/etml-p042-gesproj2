@@ -105,13 +105,11 @@ ul {
   min-width: 214px;
 }
 
-ul,
-li {
+ul, li {
   border-radius: 20px;
   background-color: var(--navBackground-color);
 }
-ul li,
-a {
+ul li, a {
   text-align: center;
   display: inline-block;
   margin: 0 2px;
@@ -138,10 +136,11 @@ li a:hover {
 
 .container {
   margin: 100px auto 0 auto;
-  width: 45%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   z-index: 2;
+  justify-content: center;
 }
 .container-telephone {
   margin: 30px auto 0 auto;
@@ -160,19 +159,19 @@ li a:hover {
   z-index: 2;
 }
 
-.caseInfo,
-.caseGitLab {
+.caseInfo, .caseGitHub {
   width: 550px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 }
-.caseInfo h3,
-img {
-  margin-left: 10%;
+.caseInfo h3, img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
-.case ul,
-.case li {
+.case ul, .case li {
   background-color: transparent;
   display: block;
 }
@@ -181,16 +180,14 @@ img {
 }
 .case h3 {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10%;
 }
 .case h3.title {
   padding-top: 0px;
 }
 .case h4 {
   text-align: center;
-}
-#etml {
-  width: 265px;
+  margin-bottom: 3%;
 }
 svg {
   height: 70px;
@@ -201,31 +198,29 @@ svg {
   fill: var(--svgBackground-color);
 }
 .case #svgLogos {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
   flex-wrap: wrap;
-  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .case a:hover {
   color: var(--caseActive-color);
 }
 
-#tableau {
-  table-layout: fixed;
-  width: 100%;
+svg.gitHubLogo{
+  width: 50%;
+  height: 200px;
 }
 
 .col-md-3 {
   width: 30%;
 }
-
 .col-md-9 {
   width: 70%;
 }
 .rowParent {
   min-width: 975.5px;
 }
+
 /* BUTTON RADIO*/
 .lblContainer {
   margin-bottom: 5px;
@@ -478,17 +473,6 @@ svg {
   }
 }
 
-.cloud {
-  background: rgb(222, 237, 248);
-  border-radius: 200px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  height: 39px;
-  margin-right: 0;
-  position: absolute;
-  right: 0%;
-  width: 102px;
-}
-
 .switch {
   position: relative;
   display: inline-block;
@@ -550,17 +534,20 @@ input#chBoxDarkMode:checked + .slider:before {
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 1000px) {
+  .container{
+    width: auto;
+  }
+}
+
 @media only screen and (max-width: 600px) {
-  #git {
-    width: 0;
-    height: 0;
+  .case h3 {
+    text-align: center;
+    padding-top: 3%;
   }
-  #nomProjet {
-    margin-top: -50%;
-    margin-left: 20%;
-  }
-  #etml {
-    width: 80%;
+  .case{
+    width: 220px;
+    height: 220px;
   }
   svg {
     height: 20%;
@@ -570,22 +557,16 @@ input#chBoxDarkMode:checked + .slider:before {
     justify-content: center;
     margin-top: 10%;
   }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
+  svg.gitHubLogo{
+    margin-right: auto;
+    margin-left: auto;
+    height: 40px;
+  }
+  .caseGitHub ul li{
+    padding-top: 0%;
   }
 }
 @media only screen and (max-width: 422px) {
-  #git {
-    width: 0;
-    height: 0;
-  }
-  .titre {
-    font-size: 0px;
-  }
-  h4 {
-    font-size: 0px;
-  }
   svg {
     height: 60px;
     width: 25%;
@@ -594,56 +575,19 @@ input#chBoxDarkMode:checked + .slider:before {
     justify-content: center;
     margin-top: 5%;
   }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
-  }
 }
 @media only screen and (max-width: 380px) {
-  #git {
-    width: 0;
-    height: 0;
-  }
   svg {
     height: 60px;
-    width: 20%;
     margin: 7px;
     padding: 7px;
     justify-content: center;
-    margin-top: 10%;
-  }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
   }
 }
 @media only screen and (max-width: 350px) {
-  #nomProjet {
-    font-size: 0px;
-  }
-  #etml {
-    margin-top: 45%;
-    margin-left: -1%;
-    width: 100%;
-    transform: rotate(-90deg);
-  }
-  .titre {
-    font-size: 0px;
-  }
-  h4 {
-    font-size: 0px;
-  }
   ul {
     margin-top: -10%;
     margin-left: 5%;
-  }
-  #git {
-    width: 0;
-    height: 0;
-  }
-  #gitlab {
-    margin-top: -50%;
-    font-size: 12px;
   }
   svg {
     margin: 7px;

@@ -20,18 +20,6 @@
     </header>
 
     <div class="sun"></div>
-    <div id="Clouds">
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Foreground"></div>
-        <div class="Cloud Background"></div>
-        <div class="Cloud Background"></div>
-      </div>
 
     <div class="moonShadow"></div>
     <div class="moon"></div>
