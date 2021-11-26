@@ -297,7 +297,6 @@ svg.gitHubLogo {
 	user-select: none;
 }
 
-/* Hide the browser's default checkbox */
 .lblContainerCheckbox input {
 	position: absolute;
 	opacity: 0;
@@ -306,7 +305,6 @@ svg.gitHubLogo {
 	width: 0;
 }
 
-/* Create a custom checkbox */
 .checkmarkCheckbox {
 	margin-top: 3px;
 	position: absolute;
@@ -318,29 +316,24 @@ svg.gitHubLogo {
 	border: solid 1px var(--checkmarkBorder-color);
 }
 
-/* On mouse-over, add a grey background color */
 .lblContainerCheckbox:hover input ~ .checkmarkCheckbox {
 	background-color: var(--checkmarkHover-color);
 }
 
-/* When the checkbox is checked, add a blue background */
 .lblContainerCheckbox input:checked ~ .checkmarkCheckbox {
 	background-color: var(--checkmarkChecked-color);
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmarkCheckbox:after {
 	content: '';
 	position: absolute;
 	display: none;
 }
 
-/* Show the checkmark when checked */
 .lblContainerCheckbox input:checked ~ .checkmarkCheckbox:after {
 	display: block;
 }
 
-/* Style the checkmark/indicator */
 .lblContainerCheckbox .checkmarkCheckbox:after {
 	left: 6px;
 	top: 2px;
@@ -537,7 +530,6 @@ input#chBoxDarkMode:checked + .slider:before {
 	transform: translateX(35px);
 }
 
-/* Rounded sliders */
 .slider.round {
 	border-radius: 34px;
 }
