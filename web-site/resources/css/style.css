@@ -1,34 +1,41 @@
-
+/**
+* ETML
+* Auteur      : Alexis Rojas, David Dieperink, Stefan Petrovic
+* Date        : 26.11.2021 
+* Description : Feuille de style pour le site ranking téléphones
+*/
 :root {
-  --mainBackground1-color: #fff2df;
+	--mainBackground1-color: #fff2df;
 	--mainBackground2-color: #b8b8b8;
 	--mainBackground3-color: #646464;
 
-  --navFont-color: #0d1117;
-  --navBackground-color: #EDE9E9;
-  --navActiveBackground: #FFFFFF;
+	--navFont-color: #0d1117;
+	--navBackground-color: #ede9e9;
+	--navActiveBackground: #ffffff;
 
-  --boxBackground-color:#ffffff;
+	--boxHeader-color: rgba(0, 0, 0, 0.03);
+	--boxBackground-color: #ffffff;
+	--boxBackground2-color: #ffffff;
 
-  --text-color: #000000;
-  --svgBackground-color: #000000;
+	--text-color: #000000;
+	--svgBackground-color: #000000;
 
-  --caseActive-color: #EC490D;
+	--caseActive-color: #ec490d;
 
-  --checkmarkBorder-color: #CFCFCF;
-  --checkmarkBackground-color: #EEEEEE;
-  --checkmarkChecked-color: #2196f3;
-  --checkmarkHover-color: #CCCCCC;
-  --checkmarkCheckedAfter-color: #ffffff;
+	--checkmarkBorder-color: #cfcfcf;
+	--checkmarkBackground-color: #eeeeee;
+	--checkmarkChecked-color: #2196f3;
+	--checkmarkHover-color: #cccccc;
+	--checkmarkCheckedAfter-color: #ffffff;
 
-  --sun-color: #FFDE00;
-	--sunshine1-color: #FFDE0080;
-	--sunshine2-color: #FFDE0040;
-	--sunshine3-color: #FFDE0020;
-	--sunshine4-color: #FFDE0010;
-	--sunshine5-color: #FFDE0000;
+	--sun-color: #ffde00;
+	--sunshine1-color: #ffde0080;
+	--sunshine2-color: #ffde0040;
+	--sunshine3-color: #ffde0020;
+	--sunshine4-color: #ffde0010;
+	--sunshine5-color: #ffde0000;
 
-  --moon-color: none;
+	--moon-color: none;
 	--star-color: none;
 	--starShadow-color: none;
 }
@@ -38,22 +45,24 @@
 	--mainBackground2-color: #1f1f1f;
 	--mainBackground3-color: #000000;
 
-  --navFont-color: #FEFEFF;
-  --navBackground-color: #090C10;
-  --navActiveBackground: #21262D;
+	--navFont-color: #fefeff;
+	--navBackground-color: #090c10;
+	--navActiveBackground: #21262d;
 
-  --boxBackground-color: #090C10;
+	--boxHeader-color: #000000;
+	--boxBackground-color: #090c10;
+	--boxBackground2-color: #111111;
 
-  --text-color: #F0F2F8;
-  --svgBackground-color: #FFFFFF;
+	--text-color: #f0f2f8;
+	--svgBackground-color: #ffffff;
 
-  --caseActive-color: #EC490D;
+	--caseActive-color: #ec490d;
 
-  --checkmarkBorder-color: #CFCFCF;
-  --checkmarkBackground-color: #EEEEEE;
-  --checkmarkChecked-color: #2196f3;
-  --checkmarkHover-color: #CCCCCC;
-  --checkmarkCheckedAfter-color: #ffffff;
+	--checkmarkBorder-color: #868686;
+	--checkmarkBackground-color: #474747;
+	--checkmarkChecked-color: #2196f3;
+	--checkmarkHover-color: #5a5a5a;
+	--checkmarkCheckedAfter-color: #ffffff;
 
 	--sun-color: none;
 	--sunshine1-color: none;
@@ -63,267 +72,285 @@
 	--sunshine5-color: none;
 	--sunshine6-color: none;
 
-	--moon-color: #FFDE00;
+	--moon-color: #ffde00;
 	--star-color: #ffffff;
 	--starShadow-color: #ffffff;
 }
 
 * {
-  margin: 0;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
-    Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	margin: 0;
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+		Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 body {
-  background-color: var(--mainBackground1-color);
-  background-image: radial-gradient(circle, var(--mainBackground1-color) 0%, var(--mainBackground2-color) 70%, var(--mainBackground3-color) 100%);
-  background-size: cover;
-  background-attachment: fixed;
-  line-height: normal;
+	color: var(--text-color);
+	background-color: var(--mainBackground1-color);
+	background-image: radial-gradient(
+		circle,
+		var(--mainBackground1-color) 0%,
+		var(--mainBackground2-color) 70%,
+		var(--mainBackground3-color) 100%
+	);
+	background-size: cover;
+	background-attachment: fixed;
+	line-height: normal;
 }
 header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 nav {
-  margin-top: 30px;
-  top: 0;
-  z-index: 3;
+	margin-top: 30px;
+	top: 0;
+	z-index: 3;
 }
 ul {
-  padding: 2px;
-  min-width: 214px;
+	padding: 2px;
+	min-width: 214px;
 }
 
 ul,
 li {
-  border-radius: 20px;
-  background-color: var(--navBackground-color);
+	border-radius: 20px;
+	background-color: var(--navBackground-color);
 }
 ul li,
 a {
-  text-align: center;
-  display: inline-block;
-  margin: 0 2px;
-  padding: 7px;
-  text-decoration: none;
-  color: var(--navFont-color);
+	text-align: center;
+	display: inline-block;
+	margin: 0 2px;
+	padding: 7px;
+	text-decoration: none;
+	color: var(--navFont-color);
 }
 #active {
-  padding: 11px;
-  border-radius: 15px;
-  background-color: var(--navActiveBackground);
+	padding: 11px;
+	border-radius: 15px;
+	background-color: var(--navActiveBackground);
 }
+li a:hover {
+	color: var(--text-color);
+}
+
+.card {
+	background-color: var(--boxBackground2-color);
+}
+
+.card-header {
+	background-color: var(--boxHeader-color);
+}
+
 .container {
-  margin: 100px auto 0 auto;
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-  z-index: 2;
+	margin: 100px auto 0 auto;
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
+	z-index: 2;
+	justify-content: center;
 }
 .container-telephone {
-  margin: 30px auto 0 auto;
-  width: 50%;
-  display: flex;
-  flex-wrap: wrap;
+	margin: 30px auto 0 auto;
+	width: 50%;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .case {
-  background-color: var(--boxBackground-color);
-  color: var(--text-color);
-  height: 265px;
-  width: 265px;
-  margin: 10px;
-  border-radius: 20px;
-  z-index: 2;
+	background-color: var(--boxBackground-color);
+	color: var(--text-color);
+	height: 265px;
+	width: 265px;
+	margin: 10px;
+	border-radius: 20px;
+	z-index: 2;
 }
 
 .caseInfo,
-.caseGitLab {
-  width: 550px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.caseGitHub {
+	width: 550px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 .caseInfo h3,
 img {
-  margin-left: 10%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
 }
 .case ul,
 .case li {
-  background-color: transparent;
-  display: block;
+	background-color: transparent;
+	display: block;
 }
 .case ul li {
-  padding-top: 20px;
+	padding-top: 20px;
 }
 .case h3 {
-  text-align: center;
-  padding-top: 30px;
+	text-align: center;
+	padding-top: 10%;
 }
-.case h3.title{
-  padding-top: 0px;
+.case h3.title {
+	padding-top: 0px;
 }
 .case h4 {
-  text-align: center;
-}
-#etml {
-  width: 265px;
+	text-align: center;
+	margin-bottom: 3%;
 }
 svg {
-  height: 70px;
-  width: 70px;
-  margin: 7px;
-  padding: 7px;
-  justify-content: center;
-  fill: var(--svgBackground-color);
+	height: 70px;
+	width: 70px;
+	margin: 7px;
+	padding: 7px;
+	justify-content: center;
+	fill: var(--svgBackground-color);
 }
 .case #svgLogos {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  flex-wrap: wrap;
-  align-items: center;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
 }
 .case a:hover {
-  color: var(--caseActive-color);
+	color: var(--caseActive-color);
 }
 
-#tableau {
-  table-layout: fixed;
-  width: 100%;
+svg.gitHubLogo {
+	width: 50%;
+	height: 200px;
 }
 
 .col-md-3 {
-  width: 30%;
+	width: 30%;
 }
-
 .col-md-9 {
-  width: 70%;
+	width: 70%;
 }
 .rowParent {
-  min-width: 975.5px;
+	min-width: 975.5px;
 }
+
 /* BUTTON RADIO*/
 .lblContainer {
-  margin-bottom: 5px;
-  display: block;
-  position: relative;
-  padding-left: 25px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	margin-bottom: 5px;
+	display: block;
+	position: relative;
+	padding-left: 25px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .lblContainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
 .checkmark {
-  border: solid 1px var(--checkmarkBorder-color);
-  position: absolute;
-  top: 4px;
-  left: 2px;
-  height: 17px;
-  width: 17px;
-  background-color: var(--checkmarkBackground-color);
-  border-radius: 50%;
+	border: solid 1px var(--checkmarkBorder-color);
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	height: 17px;
+	width: 17px;
+	background-color: var(--checkmarkBackground-color);
+	border-radius: 50%;
 }
 .lblContainer:hover input ~ .checkmark {
-  background-color: var(--checkmarkHover-color);
+	background-color: var(--checkmarkHover-color);
 }
 .checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
+	content: '';
+	position: absolute;
+	display: none;
 }
 .lblContainer input:checked ~ .checkmark:after {
-  display: block;
+	display: block;
 }
 .lblContainer input:checked ~ .checkmark {
-  background-color: var(--checkmarkChecked-color);
+	background-color: var(--checkmarkChecked-color);
 }
 .lblContainer .checkmark:after {
-  top: 4px;
-  left: 4px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--checkmarkCheckedAfter-color);
+	top: 4px;
+	left: 4px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--checkmarkCheckedAfter-color);
 }
 
 /* CHECKBOX */
 .lblContainerCheckbox {
-  display: block;
-  position: relative;
-  padding-left: 25px;
-  padding-bottom: 5px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	display: block;
+	position: relative;
+	padding-left: 25px;
+	padding-bottom: 5px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .lblContainerCheckbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
 
 /* Create a custom checkbox */
 .checkmarkCheckbox {
-  margin-top: 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: var(--checkmarkBackground-color);
-  border: solid 1px var(--checkmarkBorder-color);
+	margin-top: 3px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 18px;
+	width: 18px;
+	background-color: var(--checkmarkBackground-color);
+	border: solid 1px var(--checkmarkBorder-color);
 }
 
 /* On mouse-over, add a grey background color */
 .lblContainerCheckbox:hover input ~ .checkmarkCheckbox {
-  background-color: var(--checkmarkHover-color);
+	background-color: var(--checkmarkHover-color);
 }
 
 /* When the checkbox is checked, add a blue background */
 .lblContainerCheckbox input:checked ~ .checkmarkCheckbox {
-  background-color: var(--checkmarkChecked-color);
+	background-color: var(--checkmarkChecked-color);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmarkCheckbox:after {
-  content: '';
-  position: absolute;
-  display: none;
+	content: '';
+	position: absolute;
+	display: none;
 }
 
 /* Show the checkmark when checked */
 .lblContainerCheckbox input:checked ~ .checkmarkCheckbox:after {
-  display: block;
+	display: block;
 }
 
 /* Style the checkmark/indicator */
 .lblContainerCheckbox .checkmarkCheckbox:after {
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 12px;
-  border: solid var(--checkmarkCheckedAfter-color);
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 12px;
+	border: solid var(--checkmarkCheckedAfter-color);
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .caseDarkmode {
@@ -332,7 +359,7 @@ svg {
 	justify-content: center;
 }
 
-.moonShadow{
+.moonShadow {
 	position: absolute;
 	margin: auto;
 	top: 250px;
@@ -341,11 +368,11 @@ svg {
 	height: 100px;
 	border-radius: 50%;
 	filter: blur(15px);
-	box-shadow: 25px 10px 0px 0px var(--moon-color); 
+	box-shadow: 25px 10px 0px 0px var(--moon-color);
 	animation: moonSpin 60s linear infinite;
 }
 
-.moon{
+.moon {
 	position: absolute;
 	margin: auto;
 	top: 250px;
@@ -353,65 +380,62 @@ svg {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
-	box-shadow: 25px 10px 0px 0px var(--moon-color); 
+	box-shadow: 25px 10px 0px 0px var(--moon-color);
 	animation: moonSpin 60s linear infinite;
 }
 
-
-.star{
+.star {
 	position: absolute;
 	margin: auto;
 	width: 3px;
 	height: 3px;
 	border-radius: 50%;
-	box-shadow: 25px 10px 0px 0px var(--star-color); 
+	box-shadow: 25px 10px 0px 0px var(--star-color);
 	animation: starSpin 160s linear infinite;
 }
 
-#star1{
+#star1 {
 	top: 240px;
 	right: 440px;
 }
-#star2{
+#star2 {
 	top: 270px;
 	right: 170px;
 }
-#star3{
+#star3 {
 	top: 210px;
 	right: 100px;
 }
-#star4{
+#star4 {
 	top: 100px;
 	right: 270px;
 }
-#star5{
+#star5 {
 	top: 10px;
 	right: 170px;
 }
-#star6{
+#star6 {
 	top: 210px;
 	right: 270px;
 }
 
 @keyframes moonSpin {
 	from {
-	  transform: rotate(30deg) translate(180px);
+		transform: rotate(30deg) translate(180px);
 	}
 	to {
-	  transform: rotate(0deg) translate(-1800px);
+		transform: rotate(0deg) translate(-1800px);
 	}
 }
 
 @keyframes starSpin {
 	from {
-	  transform: rotate(30deg) translate(110px);
+		transform: rotate(30deg) translate(110px);
 	}
 	to {
-	  transform: rotate(0deg) translate(-1800px);
+		transform: rotate(0deg) translate(-1800px);
 	}
-  }
-
-
+}
 
 .sun {
 	position: absolute;
@@ -422,17 +446,12 @@ svg {
 	height: 110px;
 	background-color: var(--sun-color);
 	border-radius: 50%;
-	box-shadow:
-		0 0 0 20px var(--sunshine1-color),
-		0 0 0 40px var(--sunshine2-color),
-		0 0 0 60px var(--sunshine3-color),
-		0 0 0 80px var(--sunshine4-color),
-		0 0 0 100px var(--sunshine5-color),
+	box-shadow: 0 0 0 20px var(--sunshine1-color),
+		0 0 0 40px var(--sunshine2-color), 0 0 0 60px var(--sunshine3-color),
+		0 0 0 80px var(--sunshine4-color), 0 0 0 100px var(--sunshine5-color),
 		0 0 40px 100px var(--sunshine4-color);
-	animation:
-		sunriseDeplacement 60s linear infinite,
-		sunrise 2s infinite linear forwards,
-		rays 2s 2s infinite linear;
+	animation: sunriseDeplacement 60s linear infinite,
+		sunrise 2s infinite linear forwards, rays 2s 2s infinite linear;
 }
 
 @keyframes sunriseDeplacement {
@@ -452,200 +471,143 @@ svg {
 
 @keyframes rays {
 	0% {
-		box-shadow: 
-		0 0 0 0 var(--sunshine1-color),
-		0 0 0 20px var(--sunshine1-color),
-		0 0 0 40px var(--sunshine2-color),
-		0 0 0 60px var(--sunshine3-color),
-		0 0 0 80px var(--sunshine4-color),
-		0 0 40px 100px var(--sunshine4-color);
+		box-shadow: 0 0 0 0 var(--sunshine1-color),
+			0 0 0 20px var(--sunshine1-color), 0 0 0 40px var(--sunshine2-color),
+			0 0 0 60px var(--sunshine3-color), 0 0 0 80px var(--sunshine4-color),
+			0 0 40px 100px var(--sunshine4-color);
 	}
 	100% {
-		box-shadow: 
-		0 0 0 20px var(--sunshine1-color),
-		0 0 0 40px var(--sunshine2-color),
-		0 0 0 60px var(--sunshine3-color),
-		0 0 0 80px var(--sunshine4-color),
-		0 0 0 100px var(--sunshine5-color),
-		0 0 40px 100px var(--sunshine4-color);
+		box-shadow: 0 0 0 20px var(--sunshine1-color),
+			0 0 0 40px var(--sunshine2-color), 0 0 0 60px var(--sunshine3-color),
+			0 0 0 80px var(--sunshine4-color),
+			0 0 0 100px var(--sunshine5-color),
+			0 0 40px 100px var(--sunshine4-color);
 	}
-}
-
-.cloud {
-    background: rgb(222, 237, 248);
-    border-radius: 200px;
-    box-shadow:0 1px 1px rgba(0,0,0,0.1);
-    height: 39px;
-    margin-right: 0;
-    position: absolute;
-    right: 0%;
-    width: 102px;
 }
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 44px;
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 44px;
 }
 
-.switch input.boxDarkMode { 
-opacity: 0;
-width: 0;
-height: 0;
+.switch input#chBoxDarkMode {
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #e6e6e6;
--webkit-transition: .4s;
-transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #e6e6e6;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 36px;
-  width: 36px;
-  left: 4px;
-  bottom: 4px;
-  background-color: #ffffff;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: '';
+	height: 36px;
+	width: 36px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #ffffff;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
 }
 
-input.boxDarkMode:checked + .slider {
-box-shadow: var(--boxShadow-color) 0px 0px 0px 2px inset;
-  background-color: #21262D;
+input#chBoxDarkMode:checked + .slider {
+	box-shadow: var(--boxShadow-color) 0px 0px 0px 2px inset;
+	background-color: #21262d;
 }
 
-input.boxDarkMode:focus + .slider {
-box-shadow: 0 0 1px #2196F3;
+input#chBoxDarkMode:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
 }
 
-input.boxDarkMode:checked + .slider:before {
--webkit-transform: translateX(26px);
--ms-transform: translateX(26px);
-transform: translateX(35px);
+input#chBoxDarkMode:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(35px);
 }
 
 /* Rounded sliders */
 .slider.round {
-border-radius: 34px;
+	border-radius: 34px;
 }
 
 .slider.round:before {
-border-radius: 50%;
+	border-radius: 50%;
 }
 
+@media only screen and (max-width: 1000px) {
+	.container {
+		width: auto;
+	}
+}
 
 @media only screen and (max-width: 600px) {
-  #git {
-    width: 0;
-    height: 0;
-  }
-  #nomProjet {
-    margin-top: -50%;
-    margin-left: 20%;
-  }
-  #etml {
-    width: 80%;
-  }
-  svg {
-    height: 20%;
-    width: 27%;
-    margin: 7px;
-    padding: 7px;
-    justify-content: center;
-    margin-top: 10%;
-  }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
-  }
+	.case h3 {
+		text-align: center;
+		padding-top: 3%;
+	}
+	.case {
+		width: 220px;
+		height: 220px;
+	}
+	svg {
+		height: 20%;
+		width: 27%;
+		margin: 7px;
+		padding: 7px;
+		justify-content: center;
+		margin-top: 10%;
+	}
+	svg.gitHubLogo {
+		margin-right: auto;
+		margin-left: auto;
+		height: 40px;
+	}
+	.caseGitHub ul li {
+		padding-top: 0%;
+	}
 }
 @media only screen and (max-width: 422px) {
-  #git {
-    width: 0;
-    height: 0;
-  }
-  .titre {
-    font-size: 0px;
-  }
-  h4 {
-    font-size: 0px;
-  }
-  svg {
-    height: 60px;
-    width: 25%;
-    margin: 7px;
-    padding: 7px;
-    justify-content: center;
-    margin-top: 5%;
-  }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
-  }
+	svg {
+		height: 60px;
+		width: 25%;
+		margin: 7px;
+		padding: 7px;
+		justify-content: center;
+		margin-top: 5%;
+	}
 }
 @media only screen and (max-width: 380px) {
-  #git {
-    width: 0;
-    height: 0;
-  }
-  svg {
-    height: 60px;
-    width: 20%;
-    margin: 7px;
-    padding: 7px;
-    justify-content: center;
-    margin-top: 10%;
-  }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
-  }
+	svg {
+		height: 60px;
+		margin: 7px;
+		padding: 7px;
+		justify-content: center;
+	}
 }
 @media only screen and (max-width: 350px) {
-  #nomProjet {
-    font-size: 0px;
-  }
-  #etml {
-    margin-top: 45%;
-    margin-left: -1%;
-    width: 100%;
-    transform: rotate(-90deg);
-  }
-  .titre {
-    font-size: 0px;
-  }
-  h4 {
-    font-size: 0px;
-  }
-  ul {
-    margin-top: -10%;
-    margin-left: 5%;
-  }
-  #git {
-    width: 0;
-    height: 0;
-  }
-  #gitlab {
-    margin-top: -50%;
-    font-size: 12px;
-  }
-  svg {
-    margin: 7px;
-    padding: 7px;
-    justify-content: center;
-    height: 20%;
-    width: 40%;
-    margin-left: 20%;
-    margin-top: -2%;
-  }
+	ul {
+		margin-top: -10%;
+		margin-left: 5%;
+	}
+	svg {
+		margin: 7px;
+		padding: 7px;
+		justify-content: center;
+		height: 20%;
+		width: 40%;
+		margin-left: 20%;
+		margin-top: -2%;
+	}
 }
