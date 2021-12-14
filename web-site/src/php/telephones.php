@@ -23,6 +23,12 @@
                 <li><a id="active" href="telephones.php">Téléphones</a></li>
             </ul>
         </nav>
+        <div class="connection">
+            <ul>
+                <li><a href="#">Sign In</a></li>
+                <li><a id="signUp" href="#">Sign Up</a></li>
+            </ul>
+        </div>
     </header>
     <!-- Balises pour l'animation du soleil et la lune -->
     <div class="sun"></div>

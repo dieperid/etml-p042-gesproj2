@@ -110,12 +110,12 @@ ul {
 	padding: 2px;
 	min-width: 214px;
 }
-
 ul,
 li {
 	border-radius: 20px;
 	background-color: var(--navBackground-color);
 }
+
 ul li,
 a {
 	text-align: center;
@@ -125,6 +125,18 @@ a {
 	text-decoration: none;
 	color: var(--navFont-color);
 }
+.connection {
+	margin-top: 30px;
+	position: absolute;
+	text-align: center;
+	right: 250px;
+}
+#signUp{
+	border: 3px solid var(--text-color);
+	border-radius: 15px;
+	padding: 8px;
+}
+
 #active {
 	padding: 11px;
 	border-radius: 15px;
