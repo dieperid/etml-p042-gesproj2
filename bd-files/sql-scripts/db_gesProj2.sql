@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : ven. 15 oct. 2021 à 11:11
+-- Généré le : mar. 14 déc. 2021 à 14:29
 -- Version du serveur :  5.7.11
 -- Version de PHP : 8.0.1
 
@@ -34,63 +34,66 @@ CREATE TABLE `t_client` (
   `cliPrenom` varchar(50) NOT NULL,
   `cliNumTel` varchar(20) NOT NULL,
   `cliLocalite` varchar(50) NOT NULL,
-  `cliCp` int(11) NOT NULL
+  `cliCp` int(11) NOT NULL,
+  `cliUsername` varchar(10) DEFAULT NULL,
+  `cliPassword` varchar(255) DEFAULT NULL,
+  `cliAvatar` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_client`
 --
 
-INSERT INTO `t_client` (`idClient`, `cliNom`, `cliPrenom`, `cliNumTel`, `cliLocalite`, `cliCp`) VALUES
-(1, 'Acevedo', 'Daryl', '16220609 2831', 'Hudson\'s Hope', 26867),
-(2, 'Ross', 'Leo', '16750313 0572', 'Arrone', 23911),
-(3, 'Dodson', 'Eden', '16910112 9469', 'Chimbarongo', 62977),
-(4, 'Curtis', 'Anika', '16271221 3764', 'Langenhagen', 23797),
-(5, 'Blankenship', 'Colin', '16040723 9078', 'New Orleans', 7610),
-(6, 'Witt', 'Talon', '16060208 0301', 'Daska', 94149),
-(7, 'Meyers', 'Grant', '16861015 1949', 'Ligny', 77261),
-(8, 'Odom', 'Olympia', '16140817 7820', 'Weisenfels', 34681),
-(9, 'Hood', 'Stone', '16921228 1050', 'Norman', 56794),
-(10, 'Gomez', 'Patrick', '16910905 4693', 'Pilibhit', 20467),
-(11, 'Hurst', 'Walter', '16540515 8279', 'Straubing', 45016),
-(12, 'Kirkland', 'Octavia', '16910105 8130', 'Buguma', 28228),
-(13, 'Lancaster', 'Kelly', '16381103 2857', 'Neerrepen', 91646),
-(14, 'Herman', 'Baker', '16840823 1333', 'Medea', 23377),
-(15, 'Huber', 'Ali', '16010508 3901', 'Lerwick', 42123),
-(16, 'Lee', 'Ivana', '16541018 4138', 'Abingdon', 87810),
-(18, 'Wooten', 'Jescie', '16600527 1223', 'Gwalior', 20340),
-(19, 'Murphy', 'Ashely', '16570225 6701', 'Chatelineau', 84877),
-(20, 'Byers', 'Kermit', '16880706 7486', 'Sainte-Marie-sur-Semois', 33496),
-(21, 'Benjamin', 'Cullen', '16940815 9615', 'Mirny', 79352),
-(22, 'Drake', 'Elijah', '16301006 2010', 'Lomza', 78858),
-(23, 'Rosa', 'Nevada', '16771203 4318', 'Krasnoarmeysk', 95254),
-(24, 'Spears', 'Kennan', '16240104 7929', 'Cuxhaven', 53206),
-(25, 'Mcgee', 'Rajah', '16490327 3524', 'Buti', 76731),
-(26, 'Allen', 'Maggie', '16730310 4850', 'Squillace', 47599),
-(27, 'Ballard', 'Jolene', '16640426 9075', 'Orenburg', 41423),
-(28, 'Pope', 'Mohammad', '16041225 8840', 'Multan', 44484),
-(29, 'Curtis', 'Alvin', '16920312 1638', 'Gwangyang', 56909),
-(30, 'Hogan', 'Lacota', '16120515 0038', 'Heredia', 20111),
-(31, 'Robertson', 'Stephen', '16960807 6635', 'Boulogne-Billancourt', 20351),
-(32, 'Good', 'Keegan', '16540629 3661', 'Chimbote', 34764),
-(33, 'Mcdowell', 'Connor', '16790609 2866', 'Colonnella', 44758),
-(34, 'Ross', 'Shad', '16340704 3524', 'Katsina', 79722),
-(35, 'Munoz', 'Noble', '16160619 8156', 'Armento', 8569),
-(36, 'Brooks', 'Claire', '16550508 8178', 'Knighton', 29442),
-(37, 'Avila', 'Flynn', '16410622 0421', 'Fosses-la-Ville', 96704),
-(38, 'Torres', 'Gretchen', '16180503 7502', 'Sahiwal', 70609),
-(39, 'Mccullough', 'Teegan', '16460221 1551', 'Plymouth', 51100),
-(40, 'Ford', 'Aristotle', '16071010 4290', 'Montauban', 14049),
-(41, 'Bolton', 'Rhonda', '16800511 3363', 'Latera', 72475),
-(42, 'Moreno', 'Wyoming', '16610323 5484', 'Genova', 80077),
-(43, 'Crane', 'Evangeline', '16130529 0866', 'Tobermory', 41306),
-(44, 'Finch', 'Ria', '16781210 3690', 'Chungju', 45459),
-(45, 'Bruce', 'Jasper', '16890823 2526', 'Gualdo Tadino', 95923),
-(46, 'Browning', 'Reed', '16730617 9529', 'Coleville Lake', 76671),
-(47, 'Dawson', 'Austin', '16720918 1986', 'Berwick-upon-Tweed', 7186),
-(48, 'Vance', 'Wendy', '16120416 6712', 'Kessel', 4088),
-(49, 'Hester', 'Bert', '16131106 1392', 'Campbellton', 86572),
-(50, 'Gonzales', 'Unity', '16760605 4588', 'Fayetteville', 52744);
+INSERT INTO `t_client` (`idClient`, `cliNom`, `cliPrenom`, `cliNumTel`, `cliLocalite`, `cliCp`, `cliUsername`, `cliPassword`, `cliAvatar`) VALUES
+(1, 'Acevedo', 'Daryl', '16220609 2831', 'Hudson\'s Hope', 26867, NULL, NULL, NULL),
+(2, 'Ross', 'Leo', '16750313 0572', 'Arrone', 23911, NULL, NULL, NULL),
+(3, 'Dodson', 'Eden', '16910112 9469', 'Chimbarongo', 62977, NULL, NULL, NULL),
+(4, 'Curtis', 'Anika', '16271221 3764', 'Langenhagen', 23797, NULL, NULL, NULL),
+(5, 'Blankenship', 'Colin', '16040723 9078', 'New Orleans', 7610, NULL, NULL, NULL),
+(6, 'Witt', 'Talon', '16060208 0301', 'Daska', 94149, NULL, NULL, NULL),
+(7, 'Meyers', 'Grant', '16861015 1949', 'Ligny', 77261, NULL, NULL, NULL),
+(8, 'Odom', 'Olympia', '16140817 7820', 'Weisenfels', 34681, NULL, NULL, NULL),
+(9, 'Hood', 'Stone', '16921228 1050', 'Norman', 56794, NULL, NULL, NULL),
+(10, 'Gomez', 'Patrick', '16910905 4693', 'Pilibhit', 20467, NULL, NULL, NULL),
+(11, 'Hurst', 'Walter', '16540515 8279', 'Straubing', 45016, NULL, NULL, NULL),
+(12, 'Kirkland', 'Octavia', '16910105 8130', 'Buguma', 28228, NULL, NULL, NULL),
+(13, 'Lancaster', 'Kelly', '16381103 2857', 'Neerrepen', 91646, NULL, NULL, NULL),
+(14, 'Herman', 'Baker', '16840823 1333', 'Medea', 23377, NULL, NULL, NULL),
+(15, 'Huber', 'Ali', '16010508 3901', 'Lerwick', 42123, NULL, NULL, NULL),
+(16, 'Lee', 'Ivana', '16541018 4138', 'Abingdon', 87810, NULL, NULL, NULL),
+(18, 'Wooten', 'Jescie', '16600527 1223', 'Gwalior', 20340, NULL, NULL, NULL),
+(19, 'Murphy', 'Ashely', '16570225 6701', 'Chatelineau', 84877, NULL, NULL, NULL),
+(20, 'Byers', 'Kermit', '16880706 7486', 'Sainte-Marie-sur-Semois', 33496, NULL, NULL, NULL),
+(21, 'Benjamin', 'Cullen', '16940815 9615', 'Mirny', 79352, NULL, NULL, NULL),
+(22, 'Drake', 'Elijah', '16301006 2010', 'Lomza', 78858, NULL, NULL, NULL),
+(23, 'Rosa', 'Nevada', '16771203 4318', 'Krasnoarmeysk', 95254, NULL, NULL, NULL),
+(24, 'Spears', 'Kennan', '16240104 7929', 'Cuxhaven', 53206, NULL, NULL, NULL),
+(25, 'Mcgee', 'Rajah', '16490327 3524', 'Buti', 76731, NULL, NULL, NULL),
+(26, 'Allen', 'Maggie', '16730310 4850', 'Squillace', 47599, NULL, NULL, NULL),
+(27, 'Ballard', 'Jolene', '16640426 9075', 'Orenburg', 41423, NULL, NULL, NULL),
+(28, 'Pope', 'Mohammad', '16041225 8840', 'Multan', 44484, NULL, NULL, NULL),
+(29, 'Curtis', 'Alvin', '16920312 1638', 'Gwangyang', 56909, NULL, NULL, NULL),
+(30, 'Hogan', 'Lacota', '16120515 0038', 'Heredia', 20111, NULL, NULL, NULL),
+(31, 'Robertson', 'Stephen', '16960807 6635', 'Boulogne-Billancourt', 20351, NULL, NULL, NULL),
+(32, 'Good', 'Keegan', '16540629 3661', 'Chimbote', 34764, NULL, NULL, NULL),
+(33, 'Mcdowell', 'Connor', '16790609 2866', 'Colonnella', 44758, NULL, NULL, NULL),
+(34, 'Ross', 'Shad', '16340704 3524', 'Katsina', 79722, NULL, NULL, NULL),
+(35, 'Munoz', 'Noble', '16160619 8156', 'Armento', 8569, NULL, NULL, NULL),
+(36, 'Brooks', 'Claire', '16550508 8178', 'Knighton', 29442, NULL, NULL, NULL),
+(37, 'Avila', 'Flynn', '16410622 0421', 'Fosses-la-Ville', 96704, NULL, NULL, NULL),
+(38, 'Torres', 'Gretchen', '16180503 7502', 'Sahiwal', 70609, NULL, NULL, NULL),
+(39, 'Mccullough', 'Teegan', '16460221 1551', 'Plymouth', 51100, NULL, NULL, NULL),
+(40, 'Ford', 'Aristotle', '16071010 4290', 'Montauban', 14049, NULL, NULL, NULL),
+(41, 'Bolton', 'Rhonda', '16800511 3363', 'Latera', 72475, NULL, NULL, NULL),
+(42, 'Moreno', 'Wyoming', '16610323 5484', 'Genova', 80077, NULL, NULL, NULL),
+(43, 'Crane', 'Evangeline', '16130529 0866', 'Tobermory', 41306, NULL, NULL, NULL),
+(44, 'Finch', 'Ria', '16781210 3690', 'Chungju', 45459, NULL, NULL, NULL),
+(45, 'Bruce', 'Jasper', '16890823 2526', 'Gualdo Tadino', 95923, NULL, NULL, NULL),
+(46, 'Browning', 'Reed', '16730617 9529', 'Coleville Lake', 76671, NULL, NULL, NULL),
+(47, 'Dawson', 'Austin', '16720918 1986', 'Berwick-upon-Tweed', 7186, NULL, NULL, NULL),
+(48, 'Vance', 'Wendy', '16120416 6712', 'Kessel', 4088, NULL, NULL, NULL),
+(49, 'Hester', 'Bert', '16131106 1392', 'Campbellton', 86572, NULL, NULL, NULL),
+(50, 'Gonzales', 'Unity', '16760605 4588', 'Fayetteville', 52744, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
