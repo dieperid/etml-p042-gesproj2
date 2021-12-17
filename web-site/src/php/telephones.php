@@ -19,7 +19,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../html/index.html">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a id="active" href="telephones.php">Téléphones</a></li>
             </ul>
         </nav>

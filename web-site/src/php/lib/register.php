@@ -41,7 +41,7 @@
     function function_alert($message) {     
         echo "<script>
         alert('$message');
-        window.location.href='../../html/index.html';
+        window.location.href='../index.php';
         </script>";
     }
 ?>

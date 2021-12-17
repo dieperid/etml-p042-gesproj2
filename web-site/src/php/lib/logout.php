@@ -10,6 +10,6 @@ setcookie('login', '');
 setcookie('pass_hache', '');
 
 // Redirection vers la page d'accueil
-header('Location: ../../html/index.html');
+header('Location: ../index.php');
 exit();
 ?>
