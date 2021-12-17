@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../resources/css/style.css" />
     <script src="../../resources/js/darkmode.js" defer></script>
+    <script src="../../resources/js/formulaire.js" defer></script>
     <title>Accueil</title>
 </head>
 <body>
@@ -23,8 +24,8 @@
         </nav>
         <div class="connection">
             <ul>
-                <li><a href="#">Sign In</a></li>
-                <li><a id="signUp" href="#">Sign Up</a></li>
+                <li><a href="#" onclick="openModal2()">Sign In</a></li>
+                <li><a id="signUp" href="#" onclick="openModal()">Sign Up</a></li>
             </ul>
         </div>
     </header>
@@ -98,5 +99,79 @@
             </label>
         </div>
     </div>
+    <div id="mapCon">
+		<div id="simpleModal" class="modal">	
+			<div class="modal-content">
+				<div class="modal-header">
+					<span onclick="closeModal()" class="closeBtn">&times;</span>
+				</div>
+				<div class="signUpDiv">
+					<form method="POST" action="../php/lib/register.php">
+                        <div class="formItem">
+                            <label for="cliNom">Nom</label>
+                            <input type="text" placeholder="Nom" name="cliNom" id="cliNom" required>
+                        </div>
+                        <div class="formItem">
+                            <label for="cliPrenom">Prénom</label>
+                            <input type="text" placeholder="Prénom" name="cliPrenom" id="cliPrenom" required>
+                        </div>
+                        <div class="formItem">
+                            <label for="cliNumTel">Téléphone</label>
+                            <input type="text" placeholder="Téléphone" name="cliNumTel" id="cliNumTel" required>
+                        </div>
+                        <div class="formItem-localite">
+                            <label for="cliLocalite">Localité</label>
+                            <input type="text" placeholder="Localité" name="cliLocalite" id="cliLocalite" required>
+                        </div>
+                        <div class="formItem-cp">
+                            <label for="cliCp">CP</label>
+                            <input type="text" placeholder="CP" name="cliCp" id="cliCp" required>
+                        </div>
+                        <div class="formItem">
+                            <label for="cliUsername">Nom d'utilisateur</label>
+                            <input type="text" placeholder="Username" name="cliUsername" id="cliUsername" required>
+                        </div>
+                        <div class="formItem">
+                            <label for="cliPassword">Mot de passe</label>
+                            <input type="password" placeholder="Password" name="cliPassword" id="cliPassword">
+                        </div>
+							<div class="formItem-avatar">
+								<label for="cliAvatar">Choisir un avatar</label>
+								<input type="text" name="cliAvatar" id="cliAvatar" placeholder="Lien de l'avatar" required readonly>
+								<button type="button" id="modalBouton"><svg class="svg-loupe" viewBox="0 0 512 512"><path d="M493.25,402.75L393.094,302.562C407.625,274.172,416,242.094,416,208C416,93.125,322.875,0,208,0C93.109,0,0,93.125,0,208
+                                    s93.109,208,208,208c33.953,0,65.906-8.312,94.219-22.719c-0.031,0-0.094,0.031-0.125,0.062c0.156-0.094,0.344-0.156,0.531-0.25
+                                    L402.75,493.25c25.031,25,65.562,25,90.5,0C518.25,468.281,518.25,427.75,493.25,402.75z M48,208c0-88.219,71.781-160,160-160
+                                    c88.219,0,160,71.781,160,160s-71.781,160-160,160S48,296.219,48,208z M459.312,436.656c-6.25,6.25-16.375,6.25-22.625,0
+                                    l-45.25-45.25c-6.25-6.25-6.25-16.375,0-22.625s16.375-6.25,22.625,0l45.25,45.25C465.594,420.281,465.594,430.406,459.312,436.656
+                                    z"/></svg></button>
+							</div>
+							<button type="submit" id="boutonRegistre">Valider</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div id="mapCon">
+		<div id="simpleModal2" class="modal2">	
+			<div class="modal-content">
+				<div class="modal-header">
+					<span onclick="closeModal2()" class="closeBtn">&times;</span>
+				</div>
+				<div class="loginDiv">
+					<form method="POST" action="../php/lib/checkLogin.php">
+                        <div class="formItem">
+                            <label for="userName">Nom d'utilisateur</label>
+                            <input type="text" placeholder="Username" name="userName" id="userName" required>
+                        </div>
+                        <div class="formItem">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" placeholder="Password" name="password" id="password">
+                        </div>
+                        <button type="submit" id="boutonLogin">Continuer</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div> 
 </body>
 </html>
