@@ -115,7 +115,6 @@ li {
 	border-radius: 20px;
 	background-color: var(--navBackground-color);
 }
-
 ul li,
 a {
 	text-align: center;
@@ -575,7 +574,16 @@ input#chBoxDarkMode:checked + .slider:before {
 	display: flex;
 	flex-wrap: wrap;
 }
+.modalBody{
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 15px;
+}
 
+.avatars{
+	height: 80px;
+	width: 80px;
+}
 /*------------mise en place du modal-----------*/
 .modal {
 	display: none;

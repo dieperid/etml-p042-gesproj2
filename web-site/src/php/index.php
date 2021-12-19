@@ -37,6 +37,7 @@
             <ul>
                 <?php if(isset($userName)){?>
                     <p><?php echo $userName ?></p>
+                    <img src="<?php echo $userAvatar?>" alt="avatar" width="20px" height="40px">
                     <li><a href="lib/logout.php">Logout</a></li>
                 <?php
                 }
@@ -48,6 +49,29 @@
             </ul>
         </div>
     </header>
+    <div id="ModalAvatar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closeBtn" onclick="closeModalAvatar()">&times;</span>
+            </div>
+            <div class="modalBody">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar0.png" alt="avatarUn">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar1.png" alt="avatarDeux">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar2.png" alt="avatarTrois">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar3.png" alt="avatarQuatre">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar4.png" alt="avatarCinque">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar5.png" alt="avatarSix">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar6.png" alt="avatarSept">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar7.png" alt="avatarHuit">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar8.png" alt="avatarNeuf">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar9.png" alt="avatarDix">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar10.png" alt="avatarOnze">
+                <img onclick="RecupererUrlImg(this)" class="avatars" src="../../resources/img/avatar/avatar11.png" alt="avatarDouze">
+            </div>
+            <div class="modalFooter">
+            </div>
+        </div>
+    </div>
     <!-- Balises pour l'animation du soleil et la lune -->
     <div class="sun"></div>
     <div class="moonShadow"></div>
@@ -157,7 +181,7 @@
 							<div class="formItem-avatar">
 								<label for="cliAvatar">Choisir un avatar</label>
 								<input type="text" name="cliAvatar" id="cliAvatar" placeholder="Lien de l'avatar" required readonly>
-								<button type="button" id="modalBouton"><svg class="svg-loupe" viewBox="0 0 512 512"><path d="M493.25,402.75L393.094,302.562C407.625,274.172,416,242.094,416,208C416,93.125,322.875,0,208,0C93.109,0,0,93.125,0,208
+								<button onclick="openModalAvatar()" type="button" id="modalBouton"><svg class="svg-loupe" viewBox="0 0 512 512"><path d="M493.25,402.75L393.094,302.562C407.625,274.172,416,242.094,416,208C416,93.125,322.875,0,208,0C93.109,0,0,93.125,0,208
                                     s93.109,208,208,208c33.953,0,65.906-8.312,94.219-22.719c-0.031,0-0.094,0.031-0.125,0.062c0.156-0.094,0.344-0.156,0.531-0.25
                                     L402.75,493.25c25.031,25,65.562,25,90.5,0C518.25,468.281,518.25,427.75,493.25,402.75z M48,208c0-88.219,71.781-160,160-160
                                     c88.219,0,160,71.781,160,160s-71.781,160-160,160S48,296.219,48,208z M459.312,436.656c-6.25,6.25-16.375,6.25-22.625,0
